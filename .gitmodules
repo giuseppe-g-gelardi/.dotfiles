@@ -1,3 +1,7 @@
 [submodule "nvim"]
     path = nvim/.config/nvim
     url = git@github.com:giuseppe-g-gelardi/nvim.git
+
+[submodule "vscode-profile"]
+    path = vscode-profile/.config/Code/User/profiles/4bf7683 
+    url = git@github.com:giuseppe-g-gelardi/vscode-profile.git
