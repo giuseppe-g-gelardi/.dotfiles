@@ -6,3 +6,4 @@ source ~/.fzf/shell/completion.zsh
 
 
 bindkey -s ^f "~/tmux-sessionizer\n"
+# bindkey -s ^b "~/tmux-windowizer\n"
