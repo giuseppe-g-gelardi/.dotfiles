@@ -17,28 +17,6 @@
 # Key bindings
 # ------------
 
-# # Function to find and cd into a directory and open neovim
-# __fzf_cd_and_open_nvim__() {
-#   local dir
-#   dir=$(find . \( -type d -o -name '.*' \) 2>/dev/null | fzf +m --preview "tree -L 1 {}")
-#   if [ -n "$dir" ]; then
-#     zle reset-prompt  # Clear the current input line
-#     zle accept-line   # Automatically accept the FZF selection
-#     (cd "$dir" && nvim . -c "e .")
-#   fi
-# }
-#
-# # Function to find and cd into a directory and open VS Code
-# __fzf_cd_and_open_code__() {
-#   local dir
-#   dir=$(find . \( -type d -o -name '.*' \) 2>/dev/null | fzf +m --preview "tree -L 1 {}")
-#   if [ -n "$dir" ]; then
-#     zle reset-prompt  # Clear the current input line
-#     zle accept-line   # Automatically accept the FZF selection
-#     (cd "$dir" && code .)
-#   fi
-# }
-#
 # Function to find and cd into a directory
 __fzf_cd_into__() {
   local dir
@@ -47,14 +25,10 @@ __fzf_cd_into__() {
     zle reset-prompt  # Clear the current input line
     zle accept-line   # Automatically accept the FZF selection
     cd "$dir"
-    print "cd --> $dir"
   fi
 }
 
 # Bindings for Zsh
-# zle -N __fzf_cd_and_open_nvim__
-# zle -N __fzf_cd_and_open_code__
 zle -N __fzf_cd_into__
-# bindkey '^G' __fzf_cd_and_open_nvim__
-# bindkey '^E' __fzf_cd_and_open_code__
 bindkey '^T' __fzf_cd_into__
+
