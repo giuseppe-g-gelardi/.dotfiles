@@ -51,6 +51,10 @@ tooltip {
   border-radius: 10px;
 }
 
+#user,
+#cpu,
+#memory,
+#disk,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -64,15 +68,22 @@ tooltip {
 #tray,
 #backlight {
   background: #1e1e2e;
-  opacity: 0.8;
+  opacity: 0.65; /* was 0.8 */
   padding: 0px 10px;
-  margin: 3px 0px;
+  margin: 3px 0px; /* was 3px 0px */
   margin-top: 10px;
   border: 1px solid #181825;
 }
 
+#user {
+  /* color: #a6e3a1; */
+  border-radius: 10px;
+  border-right: 10px;
+}
+
 #temperature {
-  border-radius: 10px 0px 0px 10px;
+  color: #a6e3a1;
+  border-radius: 0px; /* was 10px 0px 0px 10px */
 }
 
 #temperature.critical {
@@ -117,15 +128,22 @@ tooltip {
 
 #network {
   color: #f9e2af;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px; /* was 10px 0px 0px 10px */
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#disk {
+  color: #a6e3a1;
+  border-radius: 0px 10px 10px 0px;
   border-left: 0px;
   border-right: 0px;
 }
 
 #bluetooth {
   color: #89b4fa;
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 10px;
+  border-radius: 0px 0px 0px 0px; /* was 0px 10px 10px 0px */
+  margin-right: 0px; /* was 10px */
 }
 
 #pulseaudio {

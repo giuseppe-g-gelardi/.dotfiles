@@ -20,7 +20,8 @@
 # Function to find and cd into a directory
 __fzf_cd_into__() {
   local dir
-  dir=$(find . \( -type d -o -name '.*' \) 2>/dev/null | fzf +m --preview "tree -L 1 {}")
+  # dir=$(find . \( -type d -o -name '.*' \) 2>/dev/null | fzf +m --preview "tree -L 1 {}")
+  dir=$(find ~/projects ~/.config ~/.dotfiles -mindepth 0 -maxdepth 2 -type d | fzf +m --preview "tree -L 1 {}")
   if [ -n "$dir" ]; then
     zle reset-prompt  # Clear the current input line
     zle accept-line   # Automatically accept the FZF selection
@@ -30,5 +31,6 @@ __fzf_cd_into__() {
 
 # Bindings for Zsh
 zle -N __fzf_cd_into__
-bindkey '^T' __fzf_cd_into__
+# bindkey '^T' __fzf_cd_into__
+bindkey '^G' __fzf_cd_into__
 
