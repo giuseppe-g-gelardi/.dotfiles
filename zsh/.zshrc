@@ -15,15 +15,24 @@ source ~/.profile
 source ~/.zsh_profile
 alias vim="nvim"
 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+source /home/giuseppe/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# pnpm
 export PNPM_HOME="/home/giuseppe/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+# pnpm end
 
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-# echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-source /home/giuseppe/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export GOPATH=$HOME/go
+export PATH=/usr/local/go/bin:$PATH
+
+
